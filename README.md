@@ -15,4 +15,5 @@ Run `.exe` file with `yt.txt` in the same directory
 Youtube links with AdBlock modification `&ab_channel=<CHANNEL_NAME>` is parsed, so it is usable
 
 ## Dependencies  
-youtube-dl
+youtube-dl  
+git bash  
