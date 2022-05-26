@@ -12,7 +12,8 @@ https://www.youtube.com/watch?v=A89jD-Ifl9o&ab_channel=RuiCh.%E4%B8%89%E6%A3%AE%
 Run `.exe` file with `yt.txt` in the same directory  
 
 ## Notes  
-Youtube links with AdBlock modification `&ab_channel=<CHANNEL_NAME>` is parsed, so it is usable
+Youtube links with AdBlock modification `&ab_channel=<CHANNEL_NAME>` is parsed, so it is usable  
+If error occurs, you might have to change the path of `git-bash.exe` in `ytdl.c`  
 
 ## Dependencies  
 youtube-dl  
