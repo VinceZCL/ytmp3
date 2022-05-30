@@ -61,8 +61,6 @@ int burner() {
 
 void *download(void *link) {
 	char command[256];
-	char url[256];
-	strcpy(url, link);
 	strcpy(command, "\"C:/Program Files/Git/git-bash.exe\" -c 'youtube-dl -x --audio-format mp3 ");
 	strcat(command, link);
 	strcat(command, "'");
