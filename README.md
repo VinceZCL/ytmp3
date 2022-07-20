@@ -19,6 +19,9 @@ Run `ytdl.pyw` and use the GUI
 Youtube links with AdBlock modification `&ab_channel=<CHANNEL_NAME>` is parsed, so it is usable  
 If error occurs, you might have to change the path of `git-bash.exe` in `ytdl.c` and `ytdl.pyw`   
 
+## Disclaimer  
+Designed for Windows 
+
 ## Dependencies  
 youtube-dl  
 git bash  
