@@ -12,9 +12,6 @@ https://www.youtube.com/watch?v=A89jD-Ifl9o&ab_channel=RuiCh.%E4%B8%89%E6%A3%AE%
 
 ```  
 
-## Alternative Usage  
-Run `ytdl.pyw` and use the GUI  
-
 ## Notes  
 Youtube links with AdBlock modification `&ab_channel=<CHANNEL_NAME>` is parsed, so it is usable  
 If error occurs, you might have to change the path of `git-bash.exe` in `ytdl.c` and `ytdl.pyw`   
