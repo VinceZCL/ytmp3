@@ -20,5 +20,5 @@ If error occurs, you might have to change the path of `git-bash.exe` in `ytdl.c`
 Designed for Windows 
 
 ## Dependencies  
-yt-dlp 
+yt-dlp  
 git bash  
