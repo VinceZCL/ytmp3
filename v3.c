@@ -82,7 +82,7 @@ void move_cursor(int row, int col) {
 }
 
 void clear_line() {
-    printf("\033[2K");
+    printf("\033[2K\r");
     fflush(stdout);
 }
 
@@ -135,13 +135,13 @@ void* process(void* arg) {
         return NULL;
     }
 
-    char line[256];
+    char line[300];
     while (fgets(line, sizeof(line), fp)) {
         pthread_mutex_lock(&print_mutex);
         move_cursor(t_arg->line, 1);
         clear_line();
         line[strcspn(line, "\n")] = '\0';
-        printf("[Thread %d] %.70s\n", t_arg->thread, line);
+        printf("\033[%d;1H\033[2K%s\n", t_arg->line, line);
         fflush(stdout);
         pthread_mutex_unlock(&print_mutex);
     }
