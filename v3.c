@@ -37,6 +37,10 @@ int main() {
 
     size = getLines(file);
     printf("Lines collected from %s: %ld\n", filename, size);
+    if (size == 0) {
+        fclose(file);
+        return 1;
+    }
 
     char* links[size];
     for (size_t i = 0; i < size; i++) {
@@ -57,7 +61,7 @@ int main() {
     for (size_t i = 0; i < size; i++) {
         args[i].thread = (int) i+1;
         args[i].link = links[i];
-        args[i].line = (int) i+1;
+        args[i].line = (int) i+3;
         pthread_create(&threads[i], NULL, process, &args[i]);
     }
 
@@ -66,7 +70,7 @@ int main() {
     }
 
     pthread_mutex_lock(&print_mutex);
-    move_cursor((int) size+1, 1);
+    move_cursor((int) size+4, 1);
     printf("All %ld processes completed", size);
     fflush(stdout);
     pthread_mutex_unlock(&print_mutex);
@@ -91,7 +95,7 @@ size_t getLines(FILE* file) {
     char c[100];
 
     while (fgets(c, 100, file)) {
-        if (strlen(c) > 1) {
+        if (strlen(c) > 11) {
             lines++;
         }
     }
@@ -105,8 +109,10 @@ void getArray(char** arr, size_t size, FILE* file) {
     size_t i = 0;
     while (fgets(link, 100, file) && i < size) {
         link[strcspn(link, "\n")] = '\0';
-        strcpy(arr[i], link);
-        i++;
+        if (strlen(link) > 11) {
+            strcpy(arr[i], link);
+            i++;
+        }
     }
 }
 
