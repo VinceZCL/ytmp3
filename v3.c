@@ -120,7 +120,7 @@ void* process(void* arg) {
     move_cursor(t_arg->line, 1);
     clear_line();
 
-    printf("[Thread %d] Starting: %s", t_arg->thread, t_arg->link);
+    printf("[Thread %02d] Starting: %s", t_arg->thread, t_arg->link);
     fflush(stdout);
     pthread_mutex_unlock(&print_mutex);
 
@@ -129,7 +129,7 @@ void* process(void* arg) {
         pthread_mutex_lock(&print_mutex);
         move_cursor(t_arg->line, 1);
         clear_line();
-        printf("[Thread %d] Failed to process: %s", t_arg->thread, t_arg->link);
+        printf("[Thread %02d] Failed to process: %s", t_arg->thread, t_arg->link);
         fflush(stdout);
         pthread_mutex_unlock(&print_mutex);
         return NULL;
@@ -157,9 +157,9 @@ void* process(void* arg) {
     move_cursor(t_arg->line, 1);
     clear_line();
     if (success) {
-        printf("[Thread %d] Success: %s\n", t_arg->thread, t_arg->link);
+        printf("[Thread %02d] Success: %s\n", t_arg->thread, t_arg->link);
     } else {
-        printf("[Thread %d] Failure: %s\n", t_arg->thread, t_arg->link);
+        printf("[Thread %02d] Failure: %s\n", t_arg->thread, t_arg->link);
     }
 
     fflush(stdout);
